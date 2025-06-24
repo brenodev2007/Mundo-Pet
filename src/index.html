@@ -32,13 +32,58 @@
     </section>
 
     <section class="agendamento">
-      <ul id="hour" class="hour" aria-label="Horários disponíveis">
-        <li data-period="morning" class="hour-period">
-          <img src="assets/morning.svg" alt="" />
-          <p>Manhã</p>
-          <span>09h-12h</span>
-        </li>
-      </ul>
+      <div class="shcedule">
+        <header class="agendamento-header">
+          <div class="info">
+            <img src="assets/morning.svg" alt="Ícone manhã" />
+            <h2>Manhã</h2>
+          </div>
+          <span class="period-range">09h–12h</span>
+        </header>
+
+        <ul id="hour-list" class="hour-list" aria-label="Horários disponíveis">
+          <li class="agendamento-item">
+            <div class="agendamento-info">
+              <p class="agendamento-hora">
+                <strong>09:00</strong> <span class="pet">Thor</span> / Fernanda
+                Costa
+              </p>
+              <p class="agendamento-servico">Vacinação</p>
+            </div>
+            <button class="remover-btn">Remover agendamento</button>
+          </li>
+        </ul>
+      </div>
+      <div class="shcedule">
+        <header class="agendamento-header">
+          <div class="info">
+            <img src="assets/afternoon.svg" alt="Ícone manhã" />
+            <h2>Tarde</h2>
+          </div>
+          <span class="period-range">13h-18h</span>
+        </header>
+
+        <ul
+          id="hour-list"
+          class="hour-list"
+          aria-label="Horários disponíveis"
+        ></ul>
+      </div>
+      <div class="shcedule">
+        <header class="agendamento-header">
+          <div class="info">
+            <img src="assets/night.svg" alt="Ícone manhã" />
+            <h2>Noite</h2>
+          </div>
+          <span class="period-range">19h-22h</span>
+        </header>
+
+        <ul
+          id="hour-list"
+          class="hour-list"
+          aria-label="Horários disponíveis"
+        ></ul>
+      </div>
     </section>
   </body>
 </html>
