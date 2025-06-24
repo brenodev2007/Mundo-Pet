@@ -14,7 +14,7 @@
       </div>
     </header>
 
-    <section class="Data">
+    <section class="app">
       <form action="">
         <header>
           <div class="text">
@@ -28,62 +28,68 @@
             <input type="date" id="date" name="date" required />
           </div>
         </header>
+
+        <section class="agendamento">
+          <div class="shcedule">
+            <header class="agendamento-header">
+              <div class="info">
+                <img src="assets/morning.svg" alt="Ícone manhã" />
+                <h2>Manhã</h2>
+              </div>
+              <span class="period-range">09h–12h</span>
+            </header>
+
+            <ul
+              id="hour-list"
+              class="hour-list"
+              aria-label="Horários disponíveis"
+            >
+              <li class="agendamento-item">
+                <div class="agendamento-info">
+                  <p class="agendamento-hora">
+                    <strong>09:00</strong> <span class="pet">Thor</span> /
+                    Fernanda Costa
+                  </p>
+                  <p class="agendamento-servico">Vacinação</p>
+                </div>
+                <button class="remover-btn">Remover agendamento</button>
+              </li>
+            </ul>
+          </div>
+          <div class="shcedule">
+            <header class="agendamento-header">
+              <div class="info">
+                <img src="assets/afternoon.svg" alt="Ícone manhã" />
+                <h2>Tarde</h2>
+              </div>
+              <span class="period-range">13h-18h</span>
+            </header>
+
+            <ul
+              id="hour-list"
+              class="hour-list"
+              aria-label="Horários disponíveis"
+            ></ul>
+          </div>
+          <div class="shcedule">
+            <header class="agendamento-header">
+              <div class="info">
+                <img src="assets/night.svg" alt="Ícone manhã" />
+                <h2>Noite</h2>
+              </div>
+              <span class="period-range">19h-22h</span>
+            </header>
+
+            <ul
+              id="hour-list"
+              class="hour-list"
+              aria-label="Horários disponíveis"
+            ></ul>
+          </div>
+        </section>
+
+        <input type="submit" />
       </form>
-    </section>
-
-    <section class="agendamento">
-      <div class="shcedule">
-        <header class="agendamento-header">
-          <div class="info">
-            <img src="assets/morning.svg" alt="Ícone manhã" />
-            <h2>Manhã</h2>
-          </div>
-          <span class="period-range">09h–12h</span>
-        </header>
-
-        <ul id="hour-list" class="hour-list" aria-label="Horários disponíveis">
-          <li class="agendamento-item">
-            <div class="agendamento-info">
-              <p class="agendamento-hora">
-                <strong>09:00</strong> <span class="pet">Thor</span> / Fernanda
-                Costa
-              </p>
-              <p class="agendamento-servico">Vacinação</p>
-            </div>
-            <button class="remover-btn">Remover agendamento</button>
-          </li>
-        </ul>
-      </div>
-      <div class="shcedule">
-        <header class="agendamento-header">
-          <div class="info">
-            <img src="assets/afternoon.svg" alt="Ícone manhã" />
-            <h2>Tarde</h2>
-          </div>
-          <span class="period-range">13h-18h</span>
-        </header>
-
-        <ul
-          id="hour-list"
-          class="hour-list"
-          aria-label="Horários disponíveis"
-        ></ul>
-      </div>
-      <div class="shcedule">
-        <header class="agendamento-header">
-          <div class="info">
-            <img src="assets/night.svg" alt="Ícone manhã" />
-            <h2>Noite</h2>
-          </div>
-          <span class="period-range">19h-22h</span>
-        </header>
-
-        <ul
-          id="hour-list"
-          class="hour-list"
-          aria-label="Horários disponíveis"
-        ></ul>
-      </div>
     </section>
   </body>
 </html>
