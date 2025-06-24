@@ -1,0 +1,8 @@
+.logo {
+  background-color: var(--background-tertiary);
+  width: 9rem;
+  border-bottom-right-radius: 20px;
+  img {
+    padding: 1rem;
+  }
+}

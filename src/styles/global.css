@@ -42,3 +42,7 @@
 .container {
   max-width: 100rem;
 }
+
+body {
+  background-color: #14151d;
+}
