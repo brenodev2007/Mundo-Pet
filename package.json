@@ -1,12 +1,14 @@
 {
   "scripts": {
     "server": "json-server --watch db.json --port 3000",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^5.6.3",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
