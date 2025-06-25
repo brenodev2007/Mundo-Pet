@@ -8,6 +8,7 @@
   background-color: var(--content-brand);
   font: var(--lb-large);
   border: none;
+  width: 100%;
   box-shadow: 0 0 15px 4px rgba(128, 0, 255, 0.6);
   transition: 0.5s;
 }

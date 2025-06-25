@@ -14,83 +14,79 @@
     </header>
 
     <section class="app">
-      <form action="">
-        <header>
-          <div class="text">
-            <h1>Sua agenda</h1>
-            <p>
-              Aqui você pode ver todos os clientes e serviços agendados pra hoje
-            </p>
-          </div>
-          <div class="input">
-            <i><img src="assets/calendar.svg" alt="Calendário" /></i>
-            <input type="date" id="date" name="date" required />
-          </div>
-        </header>
+      <div class="app-header">
+        <div class="text">
+          <h1>Sua agenda</h1>
+          <p>
+            Aqui você pode ver todos os clientes e serviços agendados pra hoje
+          </p>
+        </div>
+        <div class="input">
+          <i><img src="assets/calendar.svg" alt="Calendário" /></i>
+          <input type="date" id="date" name="date" required />
+        </div>
+      </div>
 
-        <section class="agendamento">
-          <div class="shcedule">
-            <header class="agendamento-header">
-              <div class="info">
-                <img src="assets/morning.svg" alt="Ícone manhã" />
-                <h2>Manhã</h2>
+      <section class="agendamento">
+        <div class="shcedule">
+          <header class="agendamento-header">
+            <div class="info">
+              <img src="assets/morning.svg" alt="Ícone manhã" />
+              <h2>Manhã</h2>
+            </div>
+            <span class="period-range">09h–12h</span>
+          </header>
+
+          <ul
+            id="hour-list"
+            class="hour-list"
+            aria-label="Horários disponíveis"
+          >
+            <li class="agendamento-item">
+              <div class="agendamento-info">
+                <p class="agendamento-hora">
+                  <strong>09:00</strong> <span class="pet">Thor</span> /
+                  Fernanda Costa
+                </p>
+                <p class="agendamento-servico">Vacinação</p>
               </div>
-              <span class="period-range">09h–12h</span>
-            </header>
+              <button class="remover-btn">Remover agendamento</button>
+            </li>
+          </ul>
+        </div>
+        <div class="shcedule">
+          <header class="agendamento-header">
+            <div class="info">
+              <img src="assets/afternoon.svg" alt="Ícone manhã" />
+              <h2>Tarde</h2>
+            </div>
+            <span class="period-range">13h-18h</span>
+          </header>
 
-            <ul
-              id="hour-list"
-              class="hour-list"
-              aria-label="Horários disponíveis"
-            >
-              <li class="agendamento-item">
-                <div class="agendamento-info">
-                  <p class="agendamento-hora">
-                    <strong>09:00</strong> <span class="pet">Thor</span> /
-                    Fernanda Costa
-                  </p>
-                  <p class="agendamento-servico">Vacinação</p>
-                </div>
-                <button class="remover-btn">Remover agendamento</button>
-              </li>
-            </ul>
-          </div>
-          <div class="shcedule">
-            <header class="agendamento-header">
-              <div class="info">
-                <img src="assets/afternoon.svg" alt="Ícone manhã" />
-                <h2>Tarde</h2>
-              </div>
-              <span class="period-range">13h-18h</span>
-            </header>
+          <ul
+            id="hour-list"
+            class="hour-list"
+            aria-label="Horários disponíveis"
+          ></ul>
+        </div>
+        <div class="shcedule">
+          <header class="agendamento-header">
+            <div class="info">
+              <img src="assets/night.svg" alt="Ícone manhã" />
+              <h2>Noite</h2>
+            </div>
+            <span class="period-range">19h-22h</span>
+          </header>
 
-            <ul
-              id="hour-list"
-              class="hour-list"
-              aria-label="Horários disponíveis"
-            ></ul>
-          </div>
-          <div class="shcedule">
-            <header class="agendamento-header">
-              <div class="info">
-                <img src="assets/night.svg" alt="Ícone manhã" />
-                <h2>Noite</h2>
-              </div>
-              <span class="period-range">19h-22h</span>
-            </header>
+          <ul
+            id="hour-list"
+            class="hour-list"
+            aria-label="Horários disponíveis"
+          ></ul>
+        </div>
+      </section>
 
-            <ul
-              id="hour-list"
-              class="hour-list"
-              aria-label="Horários disponíveis"
-            ></ul>
-          </div>
-        </section>
-
-        <button class="open-modal" onclick="openmodal()">
-          NOVO AGENDAMENTO
-        </button>
-      </form>
+      <button class="open-modal" id="openModalBtn">NOVO AGENDAMENTO</button>
     </section>
 
     <!-- Modal -->
@@ -107,17 +103,17 @@
         <form class="modal-form">
           <div class="form-group">
             <label for="pet-name">Nome do pet</label>
-            <input type="text" id="pet-name" name="petName" required />
+            <input type="text" id="pet-name" name="petName" />
           </div>
 
           <div class="form-group">
             <label for="owner-name">Nome do dono</label>
-            <input type="text" id="owner-name" name="ownerName" required />
+            <input type="text" id="owner-name" name="ownerName" />
           </div>
 
           <div class="form-group">
             <label for="service">Serviço</label>
-            <select id="service" name="service" required>
+            <select id="service" name="service">
               <option value="">Selecione</option>
               <option value="banho">Banho</option>
               <option value="tosa">Tosa</option>
@@ -127,10 +123,10 @@
 
           <div class="time-date">
             <img src="assets/time.svg" alt="" />
-            <input type="time" id="time" name="time" required />
+            <input type="time" id="time-agendamento" name="time" />
 
             <img src="assets/calendar.svg" alt="" />
-            <input type="date" id="date" name="date" required />
+            <input type="date" id="date-agendamento" name="date" />
           </div>
 
           <button type="submit" class="submit-btn">Cadastrar</button>
