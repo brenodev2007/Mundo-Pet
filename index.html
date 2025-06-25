@@ -9,7 +9,7 @@
   <body>
     <header>
       <div class="logo">
-        <img src="assets/logo.svg" alt="" />
+        <img src="assets/logo.svg" alt="Mundo Pet" />
       </div>
     </header>
 
@@ -18,7 +18,7 @@
         <div class="text">
           <h1>Sua agenda</h1>
           <p>
-            Aqui você pode ver todos os clientes e serviços agendados pra hoje
+            Aqui você pode ver todos os clientes e serviços agendados para hoje
           </p>
         </div>
         <div class="input">
@@ -28,7 +28,7 @@
       </div>
 
       <section class="agendamento">
-        <div class="shcedule">
+        <div class="schedule">
           <header class="agendamento-header">
             <div class="info">
               <img src="assets/morning.svg" alt="Ícone manhã" />
@@ -37,52 +37,37 @@
             <span class="period-range">09h–12h</span>
           </header>
 
-          <ul
-            id="hour-list"
-            class="hour-list"
-            aria-label="Horários disponíveis"
-          >
-            <li class="agendamento-item">
-              <div class="agendamento-info">
-                <p class="agendamento-hora">
-                  <strong>09:00</strong> <span class="pet">Thor</span> /
-                  Fernanda Costa
-                </p>
-                <p class="agendamento-servico">Vacinação</p>
-              </div>
-              <button class="remover-btn">Remover agendamento</button>
-            </li>
+          <ul class="hour-list" aria-label="Horários disponíveis manhã">
+            <!-- Agendamentos da manhã serão inseridos aqui -->
           </ul>
         </div>
-        <div class="shcedule">
+
+        <div class="schedule">
           <header class="agendamento-header">
             <div class="info">
-              <img src="assets/afternoon.svg" alt="Ícone manhã" />
+              <img src="assets/afternoon.svg" alt="Ícone tarde" />
               <h2>Tarde</h2>
             </div>
-            <span class="period-range">13h-18h</span>
+            <span class="period-range">13h–18h</span>
           </header>
 
-          <ul
-            id="hour-list"
-            class="hour-list"
-            aria-label="Horários disponíveis"
-          ></ul>
+          <ul class="hour-list" aria-label="Horários disponíveis tarde">
+            <!-- Agendamentos da tarde serão inseridos aqui -->
+          </ul>
         </div>
-        <div class="shcedule">
+
+        <div class="schedule">
           <header class="agendamento-header">
             <div class="info">
-              <img src="assets/night.svg" alt="Ícone manhã" />
+              <img src="assets/night.svg" alt="Ícone noite" />
               <h2>Noite</h2>
             </div>
-            <span class="period-range">19h-22h</span>
+            <span class="period-range">19h–22h</span>
           </header>
 
-          <ul
-            id="hour-list"
-            class="hour-list"
-            aria-label="Horários disponíveis"
-          ></ul>
+          <ul class="hour-list" aria-label="Horários disponíveis noite">
+            <!-- Agendamentos da noite serão inseridos aqui -->
+          </ul>
         </div>
       </section>
 
@@ -93,8 +78,8 @@
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal">
         <header class="modal-header">
-          <h2>Cadastro de Pet</h2>
-          <p>preencha os dados do cliente</p>
+          <h2>Novo Agendamento</h2>
+          <p>Preencha os dados do cliente</p>
         </header>
         <div class="cancel">
           <button class="close-modal" id="closeModalBtn">&times;</button>
@@ -103,33 +88,57 @@
         <form class="modal-form">
           <div class="form-group">
             <label for="pet-name">Nome do pet</label>
-            <input type="text" id="pet-name" name="petName" />
+            <input
+              type="text"
+              id="pet-name"
+              name="petName"
+              placeholder="Digite o nome do pet"
+            />
           </div>
 
           <div class="form-group">
             <label for="owner-name">Nome do dono</label>
-            <input type="text" id="owner-name" name="ownerName" />
+            <input
+              type="text"
+              id="owner-name"
+              name="ownerName"
+              placeholder="Digite o nome do dono"
+            />
           </div>
 
           <div class="form-group">
             <label for="service">Serviço</label>
             <select id="service" name="service">
-              <option value="">Selecione</option>
-              <option value="banho">Banho</option>
-              <option value="tosa">Tosa</option>
-              <option value="vacina">Vacinação</option>
+              <option value="">Selecione o serviço</option>
+              <option value="Banho">Banho</option>
+              <option value="Tosa">Tosa</option>
+              <option value="Vacinação">Vacinação</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Cirurgia">Cirurgia</option>
             </select>
           </div>
 
           <div class="time-date">
-            <img src="assets/time.svg" alt="" />
-            <input type="time" id="time-agendamento" name="time" />
+            <div class="input-group">
+              <img src="assets/time.svg" alt="Horário" />
+              <input
+                type="time"
+                id="time-agendamento"
+                name="time"
+                min="09:00"
+                max="22:00"
+              />
+            </div>
 
-            <img src="assets/calendar.svg" alt="" />
-            <input type="date" id="date-agendamento" name="date" />
+            <div class="input-group">
+              <img src="assets/calendar.svg" alt="Data" />
+              <input type="date" id="date-agendamento" name="date" />
+            </div>
           </div>
 
-          <button type="submit" class="submit-btn">Cadastrar</button>
+          <button type="submit" class="submit-btn">
+            Cadastrar Agendamento
+          </button>
         </form>
       </div>
     </div>
