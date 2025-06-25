@@ -4,8 +4,7 @@
 import "./styles/index.css";
 
 //js
-import "./scripts/openmodal.js";
-
+import { openmodal } from "./scripts/openmodal.js";
 //libs
 import "./libs/dayjs.js";
 import dayjs from "dayjs";
