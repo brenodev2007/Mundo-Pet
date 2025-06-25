@@ -1,9 +1,8 @@
-const form = document.querySelector("form");
-const dataInput = document.querySelector("#date-agendamento");
-const horarioInput = document.querySelector("#time-agendamento");
-const petNameInput = document.getElementById("pet-name");
-const ownerNameInput = document.getElementById("owner-name");
-const serviceInput = document.getElementById("service");
-const modal = document.getElementById("modalOverlay");
-const openModalBtn = document.getElementById("openModalBtn");
-const closeModalBtn = document.getElementById("closeModalBtn");
+const form = document.getElementById("modal-form");
+const inpuTime = document.getElementById("time");
+const inputDate = document.getElementById("date");
+import dayjs from "dayjs";
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
