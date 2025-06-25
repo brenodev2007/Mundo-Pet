@@ -93,16 +93,13 @@
 
 /* Ícones roxos dentro dos inputs */
 #pet-name {
-  background-image: url("assets/icons/pet.svg");
+  background-image: url("../assets/pet.svg");
 }
 #owner-name {
-  background-image: url("assets/icons/user.svg");
-}
-#service {
-  background-image: url("assets/icons/service.svg");
+  background-image: url("../assets/user.svg");
 }
 #time {
-  background-image: url("assets/calendar.svg");
+  background-image: url("../assets/calendar.svg");
   background-size: 1.2rem;
 }
 
