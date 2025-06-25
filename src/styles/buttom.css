@@ -1,0 +1,30 @@
+.open-modal {
+  padding: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: var(--content-brand);
+  font: var(--lb-large);
+  border: none;
+  box-shadow: 0 0 15px 4px rgba(128, 0, 255, 0.6);
+  transition: 0.5s;
+}
+
+.open-modal button {
+  width: 100%;
+}
+
+.open-modal:hover {
+  background-color: var(--background-highlights);
+}
+@media (width >= 80em) {
+  .open-modal {
+    padding: 1.5rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 20rem;
+  }
+}
