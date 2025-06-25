@@ -1,7 +1,3 @@
 "use strict";
 
-//css
-import "./styles/global.css";
-
-//JS
-import "./scripts/openmodal.js";
+console.log("Aplicação carregada com sucesso!");

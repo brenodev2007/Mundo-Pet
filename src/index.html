@@ -91,5 +91,47 @@
         <button class="open-modal">NOVO AGENDAMENTO</button>
       </form>
     </section>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <header class="modal-header">
+          <h2>Cadastro de Pet</h2>
+          <p>preencha os dados do cliente</p>
+        </header>
+        <div class="cancel">
+          <button class="close-modal" id="closeModalBtn">&times;</button>
+        </div>
+
+        <form class="modal-form">
+          <div class="form-group">
+            <label for="pet-name">Nome do pet</label>
+            <input type="text" id="pet-name" name="petName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="owner-name">Nome do dono</label>
+            <input type="text" id="owner-name" name="ownerName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Serviço</label>
+            <select id="service" name="service" required>
+              <option value="">Selecione</option>
+              <option value="banho">Banho</option>
+              <option value="tosa">Tosa</option>
+              <option value="vacina">Vacinação</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Horário</label>
+            <input type="time" id="time" name="time" required />
+          </div>
+
+          <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
