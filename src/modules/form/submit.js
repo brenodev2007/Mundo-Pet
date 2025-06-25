@@ -1,9 +1,9 @@
 const form = document.querySelector("form");
 const dataInput = document.querySelector("#date-agendamento");
 const horarioInput = document.querySelector("#time-agendamento");
-const petName = document.getElementById("#pet-name");
-const name = document.getElementById("#owner-name");
-const service = document.getElementById("#service");
+const petName = document.getElementById("pet-name");
+const name = document.getElementById("owner-name");
+const service = document.getElementById("service");
 
 import dayjs from "dayjs";
 
@@ -41,6 +41,14 @@ form.onsubmit = (e) => {
     if (horarioSelecionado < horaAtual) {
       alert("O horário selecionado não pode ser anterior ao horário atual.");
     }
+
+    const [hour] = horarioSelecionado.split(":");
+    const [day, month, year] = dataSelecionada.split("-");
+
+    //insere a hora na data
+    const when = dayjs(dataSelecionada.value).add(hour, "hour");
+
+    console.log(when);
   } catch (error) {
     console.error("Erro ao submeter o formulário:", error);
     alert(
