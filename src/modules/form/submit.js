@@ -41,6 +41,8 @@ form.addEventListener("submit", (event) => {
 
     // Cria o item na lista
     periodos(dataCompleta, dados);
+
+    form.reset();
   } catch (error) {
     console.error("Erro ao processar o formulário:", error);
   }
@@ -52,8 +54,32 @@ function periodos(inputTime, dados) {
   const periodo = inputTime.format("A");
 
   const li = document.createElement("li");
-  li.textContent = `${hora} - ${dados.nome} (Pet: ${dados.pet}) - Serviço: ${dados.servico}`;
+  li.textContent = `${hora} - ${dados.nome} (Pet: ${dados.pet}) - Serviço: ${
+    dados.servico
+  } -Dia : ${inputTime.format("DD/MM/YYYY")}`;
 
+  const remove = document.createElement("button");
+  const img = document.createElement("img");
+  img.src = "assets/remove.svg";
+  remove.append(img);
+  remove.style.marginLeft = "10px";
+  remove.style.cursor = "pointer";
+  remove.title = "Cancelar agendamento";
+  remove.style.backgroundColor = "transparent";
+  remove.style.border = "none";
+  remove.style.padding = "0";
+  remove.style.display = "inline-flex";
+  remove.style.alignItems = "center";
+  remove.style.justifyContent = "center";
+  remove.style.marginTop = "1rem";
+  remove.style.gap = "0.5rem";
+
+  remove.addEventListener("click", () => {
+    console.log(`Agendamento removido: ${li.textContent}`);
+    li.remove();
+  });
+
+  li.appendChild(remove);
   //selecionando ul
   const manhaUl = document.querySelector(".manha");
   const tardeUl = document.querySelector(".tarde");
