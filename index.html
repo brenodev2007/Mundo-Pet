@@ -27,7 +27,7 @@
         </div>
         <div class="input">
           <i><img src="assets/calendar.svg" alt="Calendário" /></i>
-          <input type="date" id="date" name="date" required />
+          <input type="date" id="date-consulta" name="date" required />
         </div>
       </div>
 
@@ -38,7 +38,7 @@
               <img src="assets/morning.svg" alt="Ícone manhã" />
               <h2>Manhã</h2>
             </div>
-            <span class="period-range">09h–12h</span>
+            <span class="period-range">09h–11h</span>
           </header>
 
           <ul class="hour-list" aria-label="Horários disponíveis manhã">
@@ -52,7 +52,7 @@
               <img src="assets/afternoon.svg" alt="Ícone tarde" />
               <h2>Tarde</h2>
             </div>
-            <span class="period-range">13h–18h</span>
+            <span class="period-range">12h–18h</span>
           </header>
 
           <ul class="hour-list" aria-label="Horários disponíveis tarde">
@@ -88,7 +88,7 @@
           <button class="close-modal" id="closeModalBtn">&times;</button>
         </div>
 
-        <form class="modal-form">
+        <form class="modal-form" id="modal-form">
           <div class="form-group">
             <label for="pet-name">Nome do pet</label>
             <input
@@ -126,7 +126,7 @@
               <img src="assets/time.svg" alt="Horário" />
               <input
                 type="time"
-                id="time-agendamento"
+                id="time"
                 name="time"
                 min="09:00"
                 max="22:00"
@@ -135,11 +135,11 @@
 
             <div class="input-group">
               <img src="assets/calendar.svg" alt="Data" />
-              <input type="date" id="date-agendamento" name="date" />
+              <input type="date" id="date" name="date" />
             </div>
           </div>
 
-          <button type="submit" class="submit-btn">
+          <button type="submit" class="submit-btn" id="submitBtn">
             Cadastrar Agendamento
           </button>
         </form>
