@@ -231,6 +231,7 @@ header {
   box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
   transition: all 0.3s ease;
   letter-spacing: 1px;
+  margin-bottom: 4rem;
 }
 
 .open-modal:hover {
