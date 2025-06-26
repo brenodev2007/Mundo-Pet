@@ -1,6 +1,6 @@
 const form = document.getElementById("modal-form");
-const btn = document.getElementById("submitBtn");
-
+const modalOverlay = document.getElementById("modalOverlay");
+const removeAllBtn = document.getElementById("btnApagarTudo");
 import moment from "moment";
 
 form.addEventListener("submit", (event) => {
@@ -31,17 +31,10 @@ form.addEventListener("submit", (event) => {
 
     const dados = { nome, pet, servico, horario };
 
-    // Envia ao servidor
-    enviarParaServidor({
-      nome,
-      pet,
-      servico,
-      horario: dataCompleta.format("YYYY-MM-DD HH:mm"),
-    });
-
     // Cria o item na lista
     periodos(dataCompleta, dados);
 
+    closemodal();
     form.reset();
   } catch (error) {
     console.error("Erro ao processar o formulário:", error);
@@ -50,7 +43,7 @@ form.addEventListener("submit", (event) => {
 
 function periodos(inputTime, dados) {
   const hora = inputTime.format("HH:mm");
-  const hora24 = parseInt(inputTime.format("HH")); // Hora em formato 24h
+  const hora24 = parseInt(inputTime.format("HH"));
   const periodo = inputTime.format("A");
 
   const li = document.createElement("li");
@@ -58,22 +51,13 @@ function periodos(inputTime, dados) {
     dados.servico
   } -Dia : ${inputTime.format("DD/MM/YYYY")}`;
 
+  li.style.display = "flex";
+
   const remove = document.createElement("button");
   const img = document.createElement("img");
   img.src = "assets/remove.svg";
   remove.append(img);
-  remove.style.marginLeft = "10px";
-  remove.style.cursor = "pointer";
-  remove.title = "Cancelar agendamento";
-  remove.style.backgroundColor = "transparent";
-  remove.style.border = "none";
-  remove.style.padding = "0";
-  remove.style.display = "inline-flex";
-  remove.style.alignItems = "center";
-  remove.style.justifyContent = "center";
-  remove.style.marginTop = "1rem";
-  remove.style.gap = "0.5rem";
-
+  remove.classList.add("btn-remove");
   remove.addEventListener("click", () => {
     console.log(`Agendamento removido: ${li.textContent}`);
     li.remove();
@@ -113,16 +97,21 @@ function periodos(inputTime, dados) {
   }
 }
 
-// Envia os dados para server.js
-function enviarParaServidor(dados) {
-  fetch("http://localhost:3000/agendamentos", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(dados),
-  })
-    .then((res) => res.json())
-    .then((res) => console.log("Resposta do servidor:", res))
-    .catch((err) => console.error("Erro ao enviar:", err));
+// Botão para remover todos os agendamentos
+removeAllBtn.addEventListener("click", () => {
+  const confirmacao = confirm(
+    "Você tem certeza que deseja remover todos os agendamentos?"
+  );
+  if (confirmacao) {
+    const manhaUl = document.querySelector(".manha");
+    const tardeUl = document.querySelector(".tarde");
+    const noiteUl = document.querySelector(".noite");
+    manhaUl.innerHTML = "";
+    tardeUl.innerHTML = "";
+    noiteUl.innerHTML = "";
+  }
+});
+
+function closemodal() {
+  modalOverlay.style.display = "none";
 }
